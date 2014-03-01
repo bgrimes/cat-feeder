@@ -6,6 +6,8 @@ gem "rake"
 # web ----
 gem "rack"
 gem "sinatra"
+gem "redis"
+
 # gem "rack-flash3"
 # gem "sinatra-partial"
 
