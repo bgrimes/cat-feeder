@@ -1,0 +1,8 @@
+.idea
+atlassian-ide-plugin.xml
+log/*.log
+.DS_Store
+
+/node_modules
+
+/public/assets/vendor

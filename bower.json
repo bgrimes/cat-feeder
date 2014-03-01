@@ -1,0 +1,23 @@
+{
+  "name": "CatFeeder",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bgrimes/CatFeeder",
+  "authors": [
+    "bgrimes"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "jquery": "2.0.3",
+    "jquery-ui": "1.10.3",
+    "underscore": "~1.5.2",
+    "bootstrap": "3.1.0",
+    "font-awesome": "4.0.3",
+    "ember": "~1.4.0",
+    "ember-data": "~1.0.0-beta.7",
+    "ember-mocha-adapter": "~0.1.2"
+  }
+}

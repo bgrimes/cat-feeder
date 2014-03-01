@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catfeeder ERB</title>
+
+    <% if ENV["RACK_ENV"] === "production" %>
+    <link href='assets/vendor/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='assets/vendor/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+    <% else %>
+    <link href='assets/vendor/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>
+    <link href='assets/vendor/font-awesome/css/font-awesome.css' rel='stylesheet'>
+    <% end %>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <img src='http://i.imgur.com/AgXu1Ed.gif'>
+
+    <% if ENV["RACK_ENV"] === "production" %>
+      <script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>
+      <script type="text/javascript" src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="assets/vendor/underscore/underscore.min.js"></script>
+      <%# todo: use HB runtime instead %>
+      <script type="text/javascript" src="assets/vendor/handlebars/handlebars.min.js"></script>
+      <script type="text/javascript" src="assets/vendor/ember/ember.min.js"></script>
+      <script type="text/javascript" src="assets/vendor/ember-data/ember-data.min.js"></script>
+    <% else %>
+      <script type="text/javascript" src="assets/vendor/jquery/jquery.js"></script>
+      <script type="text/javascript" src="assets/vendor/bootstrap/dist/js/bootstrap.js"></script>
+      <script type="text/javascript" src="assets/vendor/underscore/underscore.js"></script>
+      <script type="text/javascript" src="assets/vendor/handlebars/handlebars.js"></script>
+      <script type="text/javascript" src="assets/vendor/ember/ember.js"></script>
+      <script type="text/javascript" src="assets/vendor/ember-data/ember-data.js"></script>
+
+    <% end %>
+  </body>
+</html>
