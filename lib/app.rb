@@ -12,6 +12,4 @@ class CatFeederApp < Sinatra::Base
     erb :index
   end
 
-
-
 end
