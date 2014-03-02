@@ -27,6 +27,8 @@ module.exports = function(grunt){
   ];
 
   cssFilesToMove = [
+    bowerDir + '/font-awesome/css/font-awesome.css',
+      bowerDir + '/font-awesome/css/font-awesome.min.css',
     bowerDir + '/bootstrap/dist/css/bootstrap.css',
     bowerDir + '/bootstrap/dist/css/bootstrap.min.css'
   ];
