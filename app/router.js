@@ -1,4 +1,6 @@
-var Router = Ember.Router.extend();
+var Router = Ember.Router.extend({
+
+});
 
 
 module.exports = Router;
