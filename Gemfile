@@ -21,9 +21,12 @@ gem "tux"
 gem "sinatra-activerecord"
 
 # Sqlite 3 in dev
-gem "sqlite3"
-# Postgres in prod
-gem "pg"
+if ENV["RACK_ENV"] === 'development'
+  gem "sqlite3"
+else
+  # Postgres in prod
+  gem "pg"
+end
 
 
 gem "omniauth"
