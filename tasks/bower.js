@@ -38,7 +38,7 @@ module.exports = function(grunt){
   dirsToMove = [
     {
       src: bowerDir + '/font-awesome/fonts',
-      dest: publicDir + 'fonts'
+      dest: publicDir + 'css/fonts'
     }
   ];
 
