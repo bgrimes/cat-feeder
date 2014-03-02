@@ -1,13 +1,12 @@
 module.exports = function(grunt) {
     var appConfig = grunt.config.get('appConfig'),
-        publicDir = appConfig.public.directory + 'js/',
+        publicDir = appConfig.public.directory + 'js',
         base      = appConfig.app.directory,
         appJs     = base + 'app.js';
 
-
-
     grunt.config.set('catFeeder', {
         base: base,
+        publicDir: publicDir,
         files: [
             base + '{,*}*.js'
         ],
@@ -21,7 +20,7 @@ module.exports = function(grunt) {
         src: [
             '<%= catFeeder.files %>'
         ],
-        dest: 'web/assets/cat_feeder.min.js'
+        dest: '<%= catFeeder.publicDir %>/cat_feeder.min.js'
     });
 
     // ember templates
@@ -35,7 +34,7 @@ module.exports = function(grunt) {
                 }
         },
         files: {
-            'web/assets/cat_feeder_templates.min.js': ['<%= catFeeder.templates %>']
+            '<%= catFeeder.publicDir %>/cat_feeder_templates.min.js': ['<%= catFeeder.templates %>']
         }
     });
 
@@ -46,9 +45,9 @@ module.exports = function(grunt) {
             mangle: false
         },
         files: {
-            'web/assets/cat_feeder.min.js': [
-                'web/assets/cat_feeder.min.js',
-                'web/assets/cat_feeder_templates.min.js'
+            '<%= catFeeder.publicDir %>/cat_feeder.min.js': [
+                '<%= catFeeder.publicDir %>/cat_feeder.min.js',
+                '<%= catFeeder.publicDir %>/cat_feeder_templates.min.js'
             ]
         }
     });
@@ -62,7 +61,7 @@ module.exports = function(grunt) {
 
     // clean
     grunt.config.set('clean.catFeeder',
-        'web/assets/cat_feeder_templates.min.js'
+        '<%= catFeeder.publicDir %>/cat_feeder_templates.min.js'
     );
 
     // watch

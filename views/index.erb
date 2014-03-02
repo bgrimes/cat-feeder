@@ -5,12 +5,12 @@
     <title>Catfeeder ERB</title>
 
     <% if ENV["RACK_ENV"] === "production" %>
-    <link href='assets/vendor/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='assets/vendor/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='css/vendor/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/vendor/font-awesome.min.css' rel='stylesheet'>
     <link href='css/style.css' rel='stylesheet'>
     <% else %>
-    <link href='assets/vendor/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>
-    <link href='assets/vendor/font-awesome/css/font-awesome.css' rel='stylesheet'>
+    <link href='css/vendor/bootstrap.css' rel='stylesheet'>
+    <link href='css/vendor/font-awesome.css' rel='stylesheet'>
     <link href='css/style.css' rel='stylesheet'>
     <% end %>
 
@@ -22,25 +22,25 @@
   </head>
   <body>
 
-    <%= erb :handlebars %>
-
     <% if ENV["RACK_ENV"] === "production" %>
-      <script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>
-      <script type="text/javascript" src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="assets/vendor/underscore/underscore-min.js"></script>
-      <%# todo: use HB runtime instead %>
-      <script type="text/javascript" src="assets/vendor/handlebars/handlebars.min.js"></script>
-      <script type="text/javascript" src="assets/vendor/ember/ember.min.js"></script>
-      <script type="text/javascript" src="assets/vendor/ember-data/ember-data.min.js"></script>
-      <script type="text/javascript" src="js/app.min.js"></script>
+      <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+      <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/vendor/underscore-min.js"></script>
+      <script type="text/javascript" src="js/vendor/handlebars.runtime.min.js"></script>
+      <script type="text/javascript" src="js/vendor/ember.min.js"></script>
+      <script type="text/javascript" src="js/vendor/ember-data.min.js"></script>
+
+      <script type="text/javascript" src="js/cat_feeder.min.js"></script>
     <% else %>
-      <script type="text/javascript" src="assets/vendor/jquery/jquery.js"></script>
-      <script type="text/javascript" src="assets/vendor/bootstrap/dist/js/bootstrap.js"></script>
-      <script type="text/javascript" src="assets/vendor/underscore/underscore.js"></script>
-      <script type="text/javascript" src="assets/vendor/handlebars/handlebars.js"></script>
-      <script type="text/javascript" src="assets/vendor/ember/ember.js"></script>
-      <script type="text/javascript" src="assets/vendor/ember-data/ember-data.js"></script>
-      <script type="text/javascript" src="js/app.js"></script>
+      <script type="text/javascript" src="js/vendor/jquery.js"></script>
+      <script type="text/javascript" src="js/vendor/bootstrap.js"></script>
+      <script type="text/javascript" src="js/vendor/underscore.js"></script>
+      <script type="text/javascript" src="js/vendor/handlebars.runtime.js"></script>
+      <script type="text/javascript" src="js/vendor/ember.js"></script>
+      <script type="text/javascript" src="js/vendor/ember-data.js"></script>
+
+      <%# Todo have non-minified version of this %>
+      <script type="text/javascript" src="js/cat_feeder.min.js"></script>
     <% end %>
 
   </body>
