@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 
     // watch
     grunt.config.set('watch.catFeeder', {
-        files: '<%= catFeeder.files %>',
+        files: base + '{,*}*',
         tasks: ['catFeeder']
     });
 
