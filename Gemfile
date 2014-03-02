@@ -7,6 +7,8 @@ gem "rake"
 gem "rack"
 gem "sinatra"
 gem "redis"
+gem "json"
+gem "rack-flash3"
 
 # gem "rack-flash3"
 # gem "sinatra-partial"
@@ -15,3 +17,14 @@ gem "redis"
 
 # dev/debugging ----
 gem "tux"
+
+gem "sinatra-activerecord"
+
+# Sqlite 3 in dev
+gem "sqlite3"
+# Postgres in prod
+gem "pg"
+
+
+gem "omniauth"
+gem "omniauth-google-oauth2"

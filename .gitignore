@@ -8,3 +8,5 @@ log/*.log
 /public/assets/vendor
 
 /vendor/assets
+
+/*.db

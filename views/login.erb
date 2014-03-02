@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catfeeder Login</title>
+
+    <% if ENV["RACK_ENV"] === "production" %>
+    <link href='css/vendor/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/vendor/font-awesome.min.css' rel='stylesheet'>
+    <% else %>
+    <link href='css/vendor/bootstrap.css' rel='stylesheet'>
+    <link href='css/vendor/font-awesome.css' rel='stylesheet'>
+    <% end %>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container">
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class="alert alert-warning">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+      <div class="col-md-6">
+        <div class="container well login-prompt">
+          <h3>Authenticate Required</h3>
+          <p><a href="<%= @oauth_path %>" class="btn btn-primary btn-lg">Login</a></p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
