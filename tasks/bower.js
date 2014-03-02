@@ -22,8 +22,10 @@ module.exports = function(grunt){
     bowerDir + '/handlebars/handlebars.runtime.js',
     bowerDir + '/jquery/jquery.min.js',
     bowerDir + '/jquery/jquery.js',
+    bowerDir + '/jquery/jquery.min.map',
     bowerDir + '/underscore/underscore.js',
     bowerDir + '/underscore/underscore-min.js',
+    bowerDir + '/underscore/underscore-min.map'
   ];
 
   cssFilesToMove = [
