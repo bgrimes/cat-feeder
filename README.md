@@ -70,6 +70,8 @@ $ heroku pg:promote HEROKU_POSTGRES_{COLOR}_URL
 To do gmail authentication you will need to set up the ```GOOGLE_SECRET```
 and ```GOOGLE_CLIENT_ID``` environment vars on heroku.
 
+To set up the db on heroku run ```heroku run rake db:schema:load```
+
 ### Authentication
 
 For email authentication, I set up the AuthUser model to constrain
