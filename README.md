@@ -51,3 +51,33 @@ you want copied using the given css/js/dirs configs.
 $ heroku create
 $ git push heroku master
 ```
+
+Productions runs off of a postgres database, to set that up you must add a heroku
+plan to your heroku app:
+
+```
+$ heroku addons:add heroku-postgresql
+```
+
+To properly set up the database URL you will need to promote the postgres db using
+the ```HEROKU_POSTGRES_{COLOR}_URL``` (which you can find grom ```heroku config```)
+and promote:
+
+```
+$ heroku pg:promote HEROKU_POSTGRES_{COLOR}_URL
+```
+
+To do gmail authentication you will need to set up the ```GOOGLE_SECRET```
+and ```GOOGLE_CLIENT_ID``` environment vars on heroku.
+
+### Authentication
+
+For email authentication, I set up the AuthUser model to constrain
+logins to a whitelist of emails which is currently just an environment
+variable ```AUTH_EMAILS``` that is a csv of acceptable emails.
+
+```
+$ heroku config:add AUTH_EMAILS="jsmith@example.com,asmith@example.com"
+```
+
+### Local development
