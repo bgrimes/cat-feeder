@@ -83,3 +83,14 @@ $ heroku config:add AUTH_EMAILS="jsmith@example.com,asmith@example.com"
 ```
 
 ### Local development
+
+
+
+
+feed_job
+  id
+  type
+  amount
+  last_run
+  created_at
+  updated_at

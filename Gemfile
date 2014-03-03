@@ -21,8 +21,9 @@ gem "tux"
 gem "sinatra-activerecord"
 
 # Sqlite 3 in dev
-  #gem "sqlite3"
-  gem "pg"
+gem "sqlite3", :group => [:development, :test]
+gem "pg", :group => :production
+
 
 
 gem "omniauth"
