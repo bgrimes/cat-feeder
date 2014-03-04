@@ -8,6 +8,7 @@ require 'omniauth-google-oauth2'
 require 'ostruct'
 
 require 'auth_user'
+require 'job'
 
 require "cat_feeder_authentication"
 require "cat_feeder_helpers"
@@ -95,6 +96,23 @@ class CatFeederApp < Sinatra::Base
       redirect "/login"
     end
   end
+
+  #----------------------------------------------------
+
+  get "/api/job" do
+    content_type :json
+    output = {}
+    # Job.create(
+    #   name: "Morning feeding",
+    #   auth_user_id: current_user[:id],
+    #   run_at: "07:00:00",
+    #   last_run: DateTime.new(1986, 06, 16)
+    #   )
+    output = Job.all
+
+    output.to_json
+  end
+
 
   get "/api/current_user" do
     content_type :json
