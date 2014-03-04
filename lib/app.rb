@@ -95,4 +95,14 @@ class CatFeederApp < Sinatra::Base
       redirect "/login"
     end
   end
+
+  get "/api/current_user" do
+    content_type :json
+    output = {}
+    output[:id]    = current_user[:id]
+    output[:email] = current_user[:email]
+    output[:name]  = current_user[:name]
+
+    output.to_json
+  end
 end
