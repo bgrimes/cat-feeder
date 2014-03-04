@@ -14,9 +14,17 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             {{!-- Double nesting is urgly but it's all we have for now (https://github.com/emberjs/ember.js/issues/4387) --}}
-            {{#linkTo "index" tagName="li"}}
+            {{#link-to "index" tagName="li"}}
               {{#link-to 'index'}}Home{{/link-to}}
-            {{/linkTo}}
+            {{/link-to}}
+
+            {{#link-to "schedules" tagName="li"}}
+              {{#link-to 'index'}}Schedule{{/link-to}}
+            {{/link-to}}
+
+            {{#link-to "manual" tagName="li"}}
+              {{#link-to 'index'}}Manual{{/link-to}}
+            {{/link-to}}
           </ul>
 
           <form class="navbar-form navbar-right" action="/logout" role="logout">
