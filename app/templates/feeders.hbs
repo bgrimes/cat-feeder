@@ -1,0 +1,51 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Device Id</th>
+      <th>API Token</th>
+      <th>Updated</th>
+      <th>Updated By</th>
+      <th>Created</th>
+      <th>Created By</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each itemController="feeder"}}
+    <tr {{bind-attr class="isEditing:editing"}}>
+      {{#if isEditing}}
+      <td>{{input type='text' valueBinding='name' action='saveFeeder' placeholder="Name" disabledBinding="isSaving" class="form-control"}}</td>
+      <td>{{input type='text' valueBinding='deviceId' action='saveFeeder' placeholder="Device ID" disabledBinding="isSaving" class="form-control"}}</td>
+      <td>{{input type='text' valueBinding='apiToken' action='saveFeeder' placeholder="API Token" disabledBinding="isSaving" class="form-control"}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <div {{bind-attr class=':btn :btn-success isSaving:disabled'}} {{action "saveFeeder"}}><i class='fa fa-save'></i></div>
+          <div class='btn btn-danger' {{action "cancelEdit"}}><i class='fa fa-times'></i></div>
+        </div>
+      </td>
+      {{else}}
+      <td>{{name}}</td>
+      <td>{{deviceId}}</td>
+      <td>{{apiToken}}</td>
+      <td>{{moment_from_now updatedAt}}</td>
+      <td>{{updatedBy.firstName}}</td>
+      <td>{{moment_from_now createdAt}}</td>
+      <td>{{createdBy.firstName}}</td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <div class='btn btn-default' {{action "editFeeder"}}><i class='fa fa-pencil'></i></div>
+          <div class='btn btn-danger' {{action "deleteFeeder"}}><i class='fa fa-eraser'></i></div>
+        </div>
+      </td>
+      {{/if}}
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+<div class='btn btn-success' {{action 'createFeeder'}}><i class="fa fa-plus"></i> Add New Feeder</div>

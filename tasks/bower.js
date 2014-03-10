@@ -25,7 +25,9 @@ module.exports = function(grunt){
     bowerDir + '/jquery/jquery.min.map',
     bowerDir + '/underscore/underscore.js',
     bowerDir + '/underscore/underscore-min.js',
-    bowerDir + '/underscore/underscore-min.map'
+    bowerDir + '/underscore/underscore-min.map',
+    bowerDir + '/moment/moment.js',
+    bowerDir + '/moment/min/moment.min.js'
   ];
 
   cssFilesToMove = [

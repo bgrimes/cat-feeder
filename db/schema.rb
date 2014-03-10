@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304032831) do
+ActiveRecord::Schema.define(version: 20140308215843) do
 
   create_table "auth_users", force: true do |t|
     t.string   "email"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20140304032831) do
   end
 
   add_index "auth_users", ["email"], name: "index_auth_users_on_email"
+
+  create_table "feeders", force: true do |t|
+    t.string   "name"
+    t.string   "device_id"
+    t.string   "api_token"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jobs", force: true do |t|
     t.integer  "auth_user_id"

@@ -1,5 +1,5 @@
 module.exports = Ember.Route.extend({
   model: function(){
-    return this.store.find('schedule');
+    return this.store.find('job');
   }
 });

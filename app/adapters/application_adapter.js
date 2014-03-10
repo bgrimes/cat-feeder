@@ -1,1 +1,1 @@
-module.export = DS.FixtureAdapter.extend();
+module.exports = DS.FixtureAdapter.extend();

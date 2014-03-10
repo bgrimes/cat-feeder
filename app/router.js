@@ -3,11 +3,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function(){
-  this.resource('schedules', function(){
-    this.resource('schedule', {path: ':schedule_id'});
-  });
+  this.resource('jobs', {path: '/jobs'});
 
-
+  this.resource('feeders', {path: '/feeders'});
+  this.resource('user', {path: '/user'});
   this.route('manual', {path: '/manual'});
 });
 
