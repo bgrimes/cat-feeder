@@ -1,5 +1,7 @@
 var Job = DS.Model.extend({
-  comment: DS.attr('string'),
+  name: DS.attr('string'),
+  // "07:00", "17:00", "5:45", etc
+  scheduledFor: DS.attr('string'),
 
   createdBy: DS.belongsTo('user'),
   updatedBy: DS.belongsTo('user'),
@@ -11,7 +13,8 @@ var Job = DS.Model.extend({
 Job.FIXTURES = [
   {
     id: 1,
-    comment: 'Morning Feeding',
+    name: 'Morning Feeding',
+    scheduledFor: "06:00",
     createdBy: 1,
     updatedBy: 1,
     createdAt: '2014-03-08 12:23:59',
@@ -20,7 +23,8 @@ Job.FIXTURES = [
   },
   {
     id: 2,
-    comment: 'Evening Feeding',
+    name: 'Evening Feeding',
+    scheduledFor: "17:00",
     createdBy: 1,
     updatedBy: 1,
     createdAt: '2014-03-08 12:23:59',

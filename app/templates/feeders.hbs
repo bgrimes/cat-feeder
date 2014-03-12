@@ -13,8 +13,8 @@
   </thead>
   <tbody>
   {{#each itemController="feeder"}}
-    <tr {{bind-attr class="isEditing:editing"}}>
-      {{#if isEditing}}
+    {{#if isEditing}}
+    <tr class="editing">
       <td>{{input type='text' valueBinding='name' action='saveFeeder' placeholder="Name" disabledBinding="isSaving" class="form-control"}}</td>
       <td>{{input type='text' valueBinding='deviceId' action='saveFeeder' placeholder="Device ID" disabledBinding="isSaving" class="form-control"}}</td>
       <td>{{input type='text' valueBinding='apiToken' action='saveFeeder' placeholder="API Token" disabledBinding="isSaving" class="form-control"}}</td>
@@ -28,7 +28,9 @@
           <div class='btn btn-danger' {{action "cancelEdit"}}><i class='fa fa-times'></i></div>
         </div>
       </td>
-      {{else}}
+    </tr>
+    {{else}}
+    <tr {{action "editFeeder" on="doubleClick"}}>
       <td>{{name}}</td>
       <td>{{deviceId}}</td>
       <td>{{apiToken}}</td>
@@ -42,8 +44,8 @@
           <div class='btn btn-danger' {{action "deleteFeeder"}}><i class='fa fa-eraser'></i></div>
         </div>
       </td>
-      {{/if}}
     </tr>
+    {{/if}}
   {{/each}}
   </tbody>
 </table>

@@ -1,5 +1,5 @@
 var JobsController = Ember.ArrayController.extend({
-  action: {
+  actions: {
     createJob: function(){
       this.store.createRecord('job');
     }

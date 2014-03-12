@@ -20,7 +20,7 @@ App.FeederController = require('./controllers/feeder_controller');
 App.FeedersController = require('./controllers/feeders_controller');
 App.UserController = require('./controllers/user_controller');
 App.JobsController = require('./controllers/jobs_controller');
-// App.ScheduleController = require('./controllers/schedule_controller');
+App.JobController = require('./controllers/job_controller');
 
 App.Feeder = require('./models/feeder');
 App.User = require('./models/user');
