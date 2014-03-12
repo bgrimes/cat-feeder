@@ -1,4 +1,5 @@
-var FeederController = Ember.ObjectController.extend({
+var ConfirmMixin = require('./../helpers/confirm_mixin');
+var FeederController = Ember.ObjectController.extend(ConfirmMixin, {
   needs: ['user'],
 
   isEditing: false,
@@ -55,7 +56,12 @@ var FeederController = Ember.ObjectController.extend({
       });
     },
     deleteFeeder: function(){
-      var feeder = this.get('model');
+      var feeder = this.get('model'),
+          msg = "Are you sure you want to delete <strong>%@</strong>".fmt(feeder.get('name'));
+      this.confirm(msg).then(function(){
+        feeder.deleteRecord();
+        feeder.save();
+      });
     }
   }
 });

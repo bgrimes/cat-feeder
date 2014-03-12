@@ -1,4 +1,5 @@
-var JobController = Ember.ObjectController.extend({
+var ConfirmMixin = require('./../helpers/confirm_mixin');
+var JobController = Ember.ObjectController.extend(ConfirmMixin, {
   needs: ['user'],
 
   isEditing: false,
@@ -55,9 +56,15 @@ var JobController = Ember.ObjectController.extend({
       });
     },
     deleteJob: function(){
-      var job = this.get('model');
+      var job  = this.get('model'),
+          msg = "Are you sure you want to delete <strong>%@</strong>?".fmt(job.get('name'));
+      this.confirm(msg).then(function(){
+        // IF true
+        job.deleteRecord();
+        job.save();
+      });
     }
-  }
+  },
 });
 
 module.exports = JobController;

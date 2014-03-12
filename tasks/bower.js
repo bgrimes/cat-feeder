@@ -27,12 +27,13 @@ module.exports = function(grunt){
     bowerDir + '/underscore/underscore-min.js',
     bowerDir + '/underscore/underscore-min.map',
     bowerDir + '/moment/moment.js',
-    bowerDir + '/moment/min/moment.min.js'
+    bowerDir + '/moment/min/moment.min.js',
+    bowerDir + '/bootbox/bootbox.js'
   ];
 
   cssFilesToMove = [
     bowerDir + '/font-awesome/css/font-awesome.css',
-      bowerDir + '/font-awesome/css/font-awesome.min.css',
+    bowerDir + '/font-awesome/css/font-awesome.min.css',
     bowerDir + '/bootstrap/dist/css/bootstrap.css',
     bowerDir + '/bootstrap/dist/css/bootstrap.min.css'
   ];
